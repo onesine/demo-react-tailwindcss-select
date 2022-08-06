@@ -148,7 +148,7 @@ const App = () => {
                 </div>
             </div>
 
-            <p className="text-center py-10 text-slate-500 text-sm">Made with ❤️ by Onesine and powered by <LightLink url="https://reactjs.org/">react</LightLink> react and <LightLink url="https://tailwindcss.com/">tailwindcss</LightLink>.</p>
+            <p className="text-center py-10 text-slate-500 text-sm">Made with ❤️ by <LightLink url="https://twitter.com/LewheO">Onesine</LightLink> and powered by <LightLink url="https://reactjs.org/">react</LightLink> react and <LightLink url="https://tailwindcss.com/">tailwindcss</LightLink>.</p>
         </div>
     );
 };
