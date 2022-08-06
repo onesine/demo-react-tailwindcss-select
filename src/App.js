@@ -82,7 +82,7 @@ const App = () => {
 
     return (
         <div className="w-full min-h-screen px-5 md:px-20 lg:px-36 md:flex md:flex-col md:justify-between">
-            <h1 className="text-slate-600 mt-4 md:mt-8 lg:mt-20 mb-16 md:mb-8 md:text-xl lg:text-3xl text-center font-semibold">Demo react-tailwindcss-select</h1>
+            <h1 className="text-slate-600 mt-4 md:mt-8 lg:mt-20 mb-24 md:mb-8 md:text-xl lg:text-3xl text-center font-semibold">Demo react-tailwindcss-select</h1>
 
             <div className="w-full">
                 <Header>
@@ -99,8 +99,8 @@ const App = () => {
                 <div className={`transition duration-75 ${showCode ? 'bg-slate-800' : 'bg-gray-100'} px-2 pb-6 md:p-8 min-h-[15rem] rounded-md border md:min-h-[20rem] lg:min-h-[25rem] w-full`}>
                     {showCode ? (
                         <div>
-                            <h2 className="text-white font-semibold text-xl md:text-3xl lg:text-6xl">This part will be available soon.</h2>
-                            <p className="mt-3 md:mt-5 lg:mt-8 text-slate-400 text-sm lg:text-base">
+                            <h2 className="text-white mt-8 font-semibold text-xl md:text-3xl lg:text-5xl xl:text-6xl">This part will be available soon.</h2>
+                            <p className="mt-3 md:mt-5 lg:mt-8 text-slate-400 text-xs md:text-sm lg:text-base">
                                 You can access the source code of the demo project <DarkLink url="https://github.com/onesine/demo-react-tailwindcss-select">here</DarkLink>. <br/>
                                 Any contribution to the package will be welcome. You can access the package source code <DarkLink url="https://github.com/onesine/react-tailwindcss-select">here</DarkLink><br/>
                                 Thanks for testing <DarkLink url="https://www.npmjs.com/package/react-tailwindcss-select">react-tailwindcss-select</DarkLink> and have a nice 👋 day.
