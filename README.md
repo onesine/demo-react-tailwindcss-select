@@ -2,6 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+#### Preview
 <p align="center">
 <img src="https://raw.githubusercontent.com/onesine/demo-react-tailwindcss-select/master/assets/img/Screen_Shot_2022-08-06_at_22.04.09.png" alt="preview react-tailwindcss-select">
 </p>
