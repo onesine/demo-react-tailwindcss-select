@@ -82,7 +82,7 @@ const App = () => {
 
     return (
         <div className="w-full min-h-screen px-5 md:px-20 lg:px-36 md:flex md:flex-col md:justify-between">
-            <h1 className="text-slate-600 mt-2 md:mt-8 lg:mt-20 mb-6 md:text-xl lg:text-3xl text-center font-semibold">Demo react-tailwindcss-select</h1>
+            <h1 className="text-slate-600 mt-4 md:mt-8 lg:mt-20 mb-16 md:mb-8 md:text-xl lg:text-3xl text-center font-semibold">Demo react-tailwindcss-select</h1>
 
             <div className="w-full">
                 <Header>
@@ -148,7 +148,7 @@ const App = () => {
                 </div>
             </div>
 
-            <p className="text-center py-10 text-slate-500 text-sm">Made with ❤️ by <LightLink url="https://twitter.com/LewheO">Onesine</LightLink> and powered by <LightLink url="https://reactjs.org/">react</LightLink> react and <LightLink url="https://tailwindcss.com/">tailwindcss</LightLink>.</p>
+            <p className="text-center py-10 text-slate-500 text-sm">Made with ❤️ by <LightLink url="https://twitter.com/LewheO">Onesine</LightLink> and powered by <LightLink url="https://reactjs.org/">react</LightLink> and <LightLink url="https://tailwindcss.com/">tailwindcss</LightLink>.</p>
         </div>
     );
 };

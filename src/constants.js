@@ -17,7 +17,7 @@ export const selectOptions = [
 export const printAlertContent = (element, value) => {
     const printText = (text, value) => (
         value ? (
-            <p className="text-sm transition duration-75">{text}</p>
+            <p className="text-xs md:text-sm transition duration-75">{text}</p>
         ) : null
     );
 
