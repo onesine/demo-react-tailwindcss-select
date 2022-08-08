@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import {useState, useEffect, useCallback} from "react";
 import Select from "react-tailwindcss-select";
 import Button from "./components/Button";
 import Checkbox from "./components/Checkbox";
@@ -31,11 +31,11 @@ const App = () => {
     }, []);
 
 
-    const toggleShowCode = () => {
+    const toggleShowCode = useCallback(() => {
         setShowCode(!showCode);
-    };
+    }, [showCode]);
 
-    const dispatch = (type = null, action, valueData = null) => {
+    const dispatch = useCallback((type = null, action, valueData = null) => {
         switch (type) {
             case "isClearable":
                 if (action === "set")
@@ -74,11 +74,11 @@ const App = () => {
             default:
                 break;
         }
-    };
+    }, [isClearable, isDisabled, isMultiple, isSearchable, loading, value]);
 
-    const handleCheck = (value, item) => {
+    const handleCheck = useCallback((value, item) => {
         dispatch(item, "set", value);
-    };
+    }, [dispatch]);
 
     return (
         <div className="w-full min-h-screen px-5 md:px-20 lg:px-36 md:flex md:flex-col md:justify-between">
