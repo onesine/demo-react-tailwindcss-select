@@ -8,7 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 </p>
 
 ## Online demo
-You can find the online demo at [here](https://demo-react-tailwindcss-select.herokuapp.com/)
+You can find the online demo at [here](https://demo-react-tailwindcss-select.vercel.app/)
 
 ## Available Scripts
 
