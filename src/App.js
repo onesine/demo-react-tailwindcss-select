@@ -17,6 +17,7 @@ const App = () => {
     const [isMultiple, setIsMultiple] = useState(false);
     const [isSearchable, setIsSearchable] = useState(false);
     const [isDisabled, setIsDisabled] = useState(false);
+    const [isGroupOption, setIsGroupOption] = useState(false);
 
     useEffect(() => {
         setLoading(true);
@@ -29,6 +30,10 @@ const App = () => {
             clearTimeout(timer);
         };
     }, []);
+
+    const filterOptions = useCallback((data) => {
+        return data.filter(item => isGroupOption ? ("options" in item) : !("options" in item))
+    }, [isGroupOption]);
 
 
     const toggleShowCode = useCallback(() => {
@@ -71,10 +76,18 @@ const App = () => {
                 if (action === "get")
                     return loading;
                 break;
+            case "isGroupOption":
+                if (action === "set") {
+                    setIsGroupOption(valueData);
+                }
+
+                if (action === "get")
+                    return isGroupOption;
+                break;
             default:
                 break;
         }
-    }, [isClearable, isDisabled, isMultiple, isSearchable, loading, value]);
+    }, [isClearable, isDisabled, isGroupOption, isMultiple, isSearchable, loading, value]);
 
     const handleCheck = useCallback((value, item) => {
         dispatch(item, "set", value);
@@ -109,7 +122,7 @@ const App = () => {
                     ) : (
                         <SelectContainer>
                             <Select
-                                options={options}
+                                options={filterOptions(options)}
                                 onChange={value => setValue(value)}
                                 value={value}
                                 loading={loading}
@@ -132,7 +145,7 @@ const App = () => {
                                 ))}
                             </div>
 
-                            {(isClearable || isSearchable || isMultiple || isDisabled || loading) && (
+                            {(isClearable || isSearchable || isMultiple || isDisabled || loading || isGroupOption) && (
                                 <div className="mt-10 transition duration-75">
                                     <Alert title={"Information"}>
                                         {printAlertContent("isClearable", isClearable)}
@@ -140,6 +153,7 @@ const App = () => {
                                         {printAlertContent("isMultiple", isMultiple)}
                                         {printAlertContent("isDisabled", isDisabled)}
                                         {printAlertContent("loading", loading)}
+                                        {printAlertContent("isGroupOption", isGroupOption)}
                                     </Alert>
                                 </div>
                             )}
