@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import SelectContainer from "./components/SelectContainer";
 import Alert from "./components/Alert";
 import {DarkLink, LightLink} from "./components/Link";
+import TailwindColors from "./components/TailwindColors";
 
 const App = () => {
     const [options, setOptions] = useState([]);
@@ -18,6 +19,7 @@ const App = () => {
     const [isSearchable, setIsSearchable] = useState(false);
     const [isDisabled, setIsDisabled] = useState(false);
     const [isGroupOption, setIsGroupOption] = useState(false);
+    const [primaryColor, setPrimaryColor] = useState("purple");
 
     useEffect(() => {
         setLoading(true);
@@ -122,6 +124,7 @@ const App = () => {
                     ) : (
                         <SelectContainer>
                             <Select
+                                primaryColor={primaryColor}
                                 options={filterOptions(options)}
                                 onChange={value => setValue(value)}
                                 value={value}
@@ -144,6 +147,10 @@ const App = () => {
                                     </Checkbox>
                                 ))}
                             </div>
+
+                            <TailwindColors changeColor={color => setPrimaryColor(color)}/>
+
+                            <p className="mt-3 text-center text-xs text-gray-500 font-semibold">If you want to try a theme proposed by one of these colors. You can click disappointed.</p>
 
                             {(isClearable || isSearchable || isMultiple || isDisabled || loading || isGroupOption) && (
                                 <div className="mt-10 transition duration-75">
