@@ -137,12 +137,12 @@ const App = () => {
                                 isClearable={isClearable}
                                 isSearchable={isSearchable}
                                 isMultiple={isMultiple}
-                                formatGroupLabel={(data) => (
+                                /*formatGroupLabel={(data) => (
                                     <div className={`py-2 text-xs flex items-center justify-between`}>
                                         <span className="font-bold">{data.label}</span>
                                         <span className="bg-gray-200 h-5 h-5 p-1.5 flex items-center justify-center rounded-full">{data.options.length}</span>
                                     </div>
-                                )}
+                                )}*/
                                 isDisabled={isDisabled}
                             />
 
