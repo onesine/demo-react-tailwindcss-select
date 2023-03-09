@@ -4023,7 +4023,7 @@ eslint-plugin-flowtype@^8.0.3:
     lodash "^4.17.21"
     string-natural-compare "^3.0.1"
 
-eslint-plugin-import@^2.25.3, eslint-plugin-import@^2.26.0:
+eslint-plugin-import@^2.25.3:
   version "2.27.5"
   resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.27.5.tgz#876a6d03f52608a3e5bb439c2550588e51dd6c65"
   integrity sha512-LmEt3GVofgiGuiE+ORpnvP+kAm3h6MLZJ4Q5HCyHADofsb4VzXFsRiWj3c0OFiV+3DWFh0qg3v9gcPlfc3zRow==
@@ -7563,12 +7563,10 @@ react-scripts@5.0.1:
   optionalDependencies:
     fsevents "^2.3.2"
 
-react-tailwindcss-select@^1.7.3:
-  version "1.7.3"
-  resolved "https://registry.yarnpkg.com/react-tailwindcss-select/-/react-tailwindcss-select-1.7.3.tgz#26cb9b23912ebf4e4eb880e0b368f3cce87fbf58"
-  integrity sha512-71XChxaf2uae6+ZV+DEf/MC948GWsZ+Hfp+4NcVar217BsPkiv5bmM8oBIrMflgIZaJaePVcneBCwx6Z4xhwtw==
-  dependencies:
-    eslint-plugin-import "^2.26.0"
+react-tailwindcss-select@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/react-tailwindcss-select/-/react-tailwindcss-select-1.8.1.tgz#8f2fe2f3a38f7e431c2077662121009b23b60c1f"
+  integrity sha512-J4FmYNBCdLtEa0S+oobirD1Kb3ytuycjhk114PCrexYroTqGk8SycxTbPwKnHPqE/Jij/ByR8gGcs0wJzX887w==
 
 react@^18.2.0:
   version "18.2.0"
