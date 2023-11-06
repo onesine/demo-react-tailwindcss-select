@@ -1,13 +1,15 @@
-import {useState, useEffect, useCallback} from "react";
+import { useState, useEffect, useCallback } from "react";
 import Select from "react-tailwindcss-select";
 import Button from "./components/Button";
 import Checkbox from "./components/Checkbox";
-import {mangas, printAlertContent, selectOptions} from "./constants";
+import { mangas, printAlertContent, selectOptions } from "./constants";
 import Header from "./components/Header";
 import SelectContainer from "./components/SelectContainer";
 import Alert from "./components/Alert";
-import {DarkLink, LightLink} from "./components/Link";
+import { DarkLink, LightLink } from "./components/Link";
 import TailwindColors from "./components/TailwindColors";
+
+import { LiveProvider, LiveEditor, LiveError } from "react-live"
 
 const App = () => {
     const [options, setOptions] = useState([]);
@@ -95,6 +97,25 @@ const App = () => {
         dispatch(item, "set", value);
     }, [dispatch]);
 
+    const listOfOptions = filterOptions(options)
+    const liveScope = {SelectContainer, Select, listOfOptions, value}
+    const liveCode = `<SelectContainer>
+    <Select 
+        primaryColor="${primaryColor}"
+        options={listOfOptions}
+        onChange={value => console.log(value)}
+        value={value}
+        loading={${loading}}
+        isClearable={${isClearable}}
+        isSearchable={${isSearchable}}
+        isMultiple={${isMultiple}}
+        />
+</SelectContainer>
+/*
+let value = ${JSON.stringify(value)}
+let listOfOptions = ${JSON.stringify(listOfOptions, null, 4)}
+*/
+`
     return (
         <div className="w-full min-h-screen px-5 md:px-20 lg:px-36 md:flex md:flex-col md:justify-between">
             <h1 className="text-slate-600 mt-4 md:mt-8 lg:mt-20 mb-24 md:mb-8 md:text-xl lg:text-3xl text-center font-semibold">Demo react-tailwindcss-select</h1>
@@ -111,13 +132,16 @@ const App = () => {
                 </Header>
 
 
-                <div className={`transition duration-75 ${showCode ? 'bg-slate-800' : 'bg-gray-100'} px-2 pb-6 md:p-8 min-h-[15rem] rounded-md border md:min-h-[20rem] lg:min-h-[25rem] w-full`}>
+                <div className={`transition duration-75 ${showCode ? 'bg-[#011627]' : 'bg-gray-100'} px-2 pb-6 min-h-[15rem] rounded-md border md:min-h-[20rem] lg:min-h-[25rem] w-full`}>
                     {showCode ? (
                         <div>
-                            <h2 className="text-white mt-8 font-semibold text-xl md:text-3xl lg:text-5xl xl:text-6xl">This part will be available soon.</h2>
+                            <LiveProvider code={liveCode} scope={liveScope}>
+                                <LiveError />
+                                <LiveEditor />
+                            </LiveProvider>
                             <p className="mt-3 md:mt-5 lg:mt-8 text-slate-400 text-xs md:text-sm lg:text-base">
-                                You can access the source code of the demo project <DarkLink url="https://github.com/onesine/demo-react-tailwindcss-select">here</DarkLink>. <br/>
-                                Any contribution to the package will be welcome. You can access the package source code <DarkLink url="https://github.com/onesine/react-tailwindcss-select">here</DarkLink><br/>
+                                You can access the source code of the demo project <DarkLink url="https://github.com/onesine/demo-react-tailwindcss-select">here</DarkLink>. <br />
+                                Any contribution to the package will be welcome. You can access the package source code <DarkLink url="https://github.com/onesine/react-tailwindcss-select">here</DarkLink><br />
                                 Thanks for testing <DarkLink url="https://www.npmjs.com/package/react-tailwindcss-select">react-tailwindcss-select</DarkLink> and have a nice 👋 day.
                             </p>
                         </div>
@@ -159,7 +183,7 @@ const App = () => {
                                 ))}
                             </div>
 
-                            <TailwindColors changeColor={color => setPrimaryColor(color)}/>
+                            <TailwindColors changeColor={color => setPrimaryColor(color)} />
 
                             <p className="mt-3 text-center text-xs text-gray-500 font-semibold">If you want to try a theme proposed by one of these colors. You can click disappointed.</p>
 
